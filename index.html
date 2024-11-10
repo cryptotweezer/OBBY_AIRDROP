@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga con Spinner para Spline</title>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js"></script>
+    <style>
+        /* Reinicia el estilo de todos los elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para html y body para asegurar pantalla completa sin borde */
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: black; /* Evita cualquier fondo blanco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilos para la pantalla de carga */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 8px solid white;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            margin-top: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Estilos para el visualizador de Spline */
+        spline-viewer {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pantalla de carga con spinner -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">LFG to da moon</div>
+    </div>
+
+    <!-- Visualizador de Spline -->
+    <spline-viewer loading-anim-type="none" url="https://prod.spline.design/2PLzBzgRVvzCwGqH/scene.splinecode" id="spline-viewer"></spline-viewer>
+
+    <script>
+        // Verifica cada cierto tiempo si el visualizador de Spline tiene contenido cargado
+        const checkIfLoaded = setInterval(() => {
+            const splineViewer = document.getElementById('spline-viewer');
+            
+            if (splineViewer && splineViewer.shadowRoot && splineViewer.shadowRoot.children.length > 0) {
+                // Si el contenido interno de shadowRoot tiene elementos, significa que está cargado
+                document.getElementById('loader').style.display = 'none';
+                clearInterval(checkIfLoaded);
+            }
+        }, 500); // Verifica cada 500 ms
+    </script>
+
+</body>
+</html>

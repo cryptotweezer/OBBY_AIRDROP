@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LFG to da moon.">
-    <title>Obby On Aptos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-</head>
+    <title>$Obby on Solana</title>
+    <meta name="description" content="LFG to da moon">
+    <link rel="icon" href="static/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
 <body>
-    <div class="mobile-container">
-        <!-- Sparkle GIF -->
-        <img src="small-sparkle.gif" alt="Sparkle" class="small-sparkle">
+  <div class="container">
+    <!-- Texto en la izquierda -->
+    <div class="text">
+      <h1>Countdown to the $Obby Launch!</h1>
+      <h2>
+        Empowering the next generation of digital culture on
+        <img src="static/solana.png" alt="Solana Logo" class="solana-logo">
+        Blockchain
+      </h2>
+      <p class="description">Smooth, fearless, and fun, $Obby is landing on Solana to create a long-lasting legacy in the memeverse.</p>
+      <p class="sub-message">To be part of the airdrop, follow us on Twitter, stay active on Telegram, and upload your wallet to the list. Join the movement!</p>
+      <p class="are-you-ready">ARE YOU READY?</p>
+      <p>The $Obby Memelution starts in:</p>
 
-        <!-- Main Character -->
-        <div class="character-container">
-            <img src="obby-character.gif" alt="Obby Character" class="character">
+      <div id="countdown" class="countdown">
+        <div>
+          <span id="days">00</span>
+          <p>Days</p>
         </div>
-
-        <!-- Text Content -->
-        <div class="text-container">
-            <h1 class="gradient-text">ARE YOU READY?</h1>
-            <h2>$OBBY</h2>
-            <p>The proud unofficial mascot of the Aptos blockchain Is coming to town soon! Join the Memelution and stay tuned</p>
+        <div>
+          <span id="hours">00</span>
+          <p>Hours</p>
         </div>
-
-        <!-- Buttons -->
-        <div class="buttons">
-            <a href="https://x.com/obbytoken" class="button" target="_blank">Follow us on X</a>
-            <a href="https://t.me/OBBYPORTAL" class="button" target="_blank">Telegram</a>
+        <div>
+          <span id="minutes">00</span>
+          <p>Minutes</p>
         </div>
+        <div>
+          <span id="seconds">00</span>
+          <p>Seconds</p>
+          <img src="static/sparkle.gif" alt="Sparkle" class="sparkle-gif-countdown">
+        </div>
+      </div>
+      
+      <div class="buttons">
+        <a href="https://forms.gle/3PVmKFpAhNwpedXm7" target="_blank">drop Your Wallet</a>
+        <a href="https://t.me/Obby_on_Solana" target="_blank">Join Telegram</a>
+        <a href="https://x.com/obbytoken" target="_blank">Follow on Twitter</a>
+      </div>
     </div>
+
+    <!-- Imagen a la derecha -->
+    <div class="image">
+      <img src="static/obby.gif" alt="$Obby Mascot">
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,61 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$Obby on Solana</title>
-    <meta name="description" content="LFG to da moon">
-    <link rel="icon" href="static/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  
-<body>
-  <div class="container">
-    <!-- Texto en la izquierda -->
-    <div class="text">
-      <h1>Countdown to the $Obby Launch!</h1>
-      <h2>
-        Empowering the next generation of digital culture on
-        <img src="static/solana.png" alt="Solana Logo" class="solana-logo">
-        Blockchain
-      </h2>
-      <p class="description">Smooth, fearless, and fun, $Obby is landing on Solana to create a long-lasting legacy in the memeverse.</p>
-      <p class="sub-message">To be part of the airdrop, follow us on Twitter, stay active on Telegram, and upload your wallet to the list. Join the movement!</p>
-      <p class="are-you-ready">ARE YOU READY?</p>
-      <p>The $Obby Memelution starts in:</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$Obby on Solana</title>
+  <!-- Metadata para buscadores -->
+  <meta name="description" content="Join $Obby on its journey to the moon! The best meme coin on Solana. LFG! 🚀">
+  <meta name="keywords" content="Obby, Solana, memecoin, crypto, LFG, to the moon, crypto community">
+  <meta name="author" content="Obby.vip">
 
-      <div id="countdown" class="countdown">
-        <div>
-          <span id="days">00</span>
-          <p>Days</p>
-        </div>
-        <div>
-          <span id="hours">00</span>
-          <p>Hours</p>
-        </div>
-        <div>
-          <span id="minutes">00</span>
-          <p>Minutes</p>
-        </div>
-        <div>
-          <span id="seconds">00</span>
-          <p>Seconds</p>
-          <img src="static/sparkle.gif" alt="Sparkle" class="sparkle-gif-countdown">
-        </div>
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:title" content="LFG! to da moon 🚀">
+  <meta property="og:description" content="Join $Obby on its moon mission! The ultimate memecoin experience on Solana.">
+  <meta property="og:image" content="static/favicon.png">
+  <meta property="og:url" content="https://obby.vip">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="static/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar Section -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="static/coin.png" alt="Obby Coin Icon" class="icon">
+      <img src="static/logo.png" alt="Obby Logo" class="logo-navbar">
+    </div>
+    <button class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
+    <nav class="navbar-center hidden">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#who-obby" onclick="closeMenu()">Who's Obby</a>
+      <a href="#memelution" onclick="closeMenu()">Memelution</a>
+      <a href="#find-out-more" onclick="closeMenu()">Find Out More</a>
+      <a href="https://x.com/obbytoken" target="_blank" onclick="closeMenu()">
+        <img src="static/x.jpg" alt="X Logo" class="social-icon">
+      </a>
+      <a href="https://t.me/Obby_on_Solana" target="_blank" onclick="closeMenu()">
+        <img src="static/telegram.png" alt="Telegram Logo" class="social-icon">
+      </a>
+      <a href="https://pump.fun/coin/FwhB26whpnd7cbgBqmFT61pEr2w5VdtmEhLRTBhopump" target="_blank" onclick="closeMenu()">
+        <img src="static/pump.png" alt="DEX Logo" class="social-icon">
+      </a>
+    </nav>
+    <div class="navbar-right">
+      <a href="https://pump.fun/coin/FwhB26whpnd7cbgBqmFT61pEr2w5VdtmEhLRTBhopump" target="_blank" rel="noopener noreferrer">
+        <button class="buy-btn" data-hover="LFG!🔥">Buy $Obby</button>
+      </a>
+    </div>
+  </header>
+  
+  
+  
+  <!-- Main Section -->
+  <main class="main-section" id="home">
+    <!-- Logo Section -->
+    <section class="logo-container section-spacing">
+      <img src="static/logo.png" alt="Obby Logo" class="logo-section"> 
+    </section>
+
+    <!-- Skater Section -->
+    <section class="skater-container section-spacing">
+      <img src="static/skater.png" alt="Skater" class="skater">
+    </section>
+
+    <!-- Contract Address Section -->
+    <section class="contract-address section-spacing">
+      <p>Contract Address</p>
+      <div class="address-box">
+        <span class="address">FwhB26whpnd7cbgBqmFT61pEr2w5VdtmEhLRTBhopump</span>
       </div>
-      
-      <div class="buttons">
-        <a href="https://forms.gle/3PVmKFpAhNwpedXm7" target="_blank">drop Your Wallet</a>
-        <a href="https://t.me/Obby_on_Solana" target="_blank">Join Telegram</a>
-        <a href="https://x.com/obbytoken" target="_blank">Follow on Twitter</a>
+      <button class="copy-btn" onclick="copyAddress()" data-hover="Copy">Copy</button>
+    </section>
+  </main>
+
+  <!-- Who's Obby Section -->
+  <section id="who-obby" class="who-section section-spacing">
+    <div class="who-container">
+      <div class="who-content">
+        <img src="static/whos.png" alt="A Boy's Club Meme" class="who-header">
+        <p>
+          $Obby is a community-driven memecoin designed to empower and unite the next generation of digital culture on the Solana blockchain
+        </p>
+        <p>
+          Fueled by the passion of its community, $Obby is built for the long term, aiming to redefine what a memecoin can achieve in the Solana memeverse.
+        </p>
+        <p>
+          Together, we build. Together, we win. Join the $Obby fam today!
+        </p>
+        <a href="https://pump.fun/coin/FwhB26whpnd7cbgBqmFT61pEr2w5VdtmEhLRTBhopump" target="_blank" rel="noopener noreferrer">
+          <button class="buy-btn who-obby-btn" data-hover="LFG!🔥">Buy $Obby</button>
+        </a>        
+      </div>
+      <div class="who-image">
+        <img id="changing-image" src="static/bussines2.png" alt="Dynamic Business Image" class="who-right">
       </div>
     </div>
+  </section>
+  
 
-    <!-- Imagen a la derecha -->
-    <div class="image">
-      <img src="static/obby.gif" alt="$Obby Mascot">
+  <!-- Community Section -->
+  <section id="memelution" class="community-section section-spacing">
+    <div class="community-container">
+      <div class="community-image">
+        <img id="community-changing-image" src="static/yeah2.png" alt="Business" class="community-left">
+      </div>
+      <div class="community-content">
+        <img src="static/welcome.png" alt="A Boy's Club Meme" class="community-header">
+        <p>
+          The $Obby Memelution is more than a movement, it's an inclusive platform where everyone has a place. Whether you're a seasoned crypto enthusiast or just starting your journey, $Obby welcomes you to join this exciting adventure on the Solana blockchain.
+        </p>
+        <p>
+          Together, we’re redefining what a memecoin can achieve. Join the Memelution today.
+        </p>
+        <p class="moon-text">
+          let’s go to da moon!
+        </p>        
+        <a href="https://t.me/Obby_on_Solana" target="_blank" rel="noopener noreferrer">
+          <button class="buy-btn memelution-btn" data-hover="Telegram">Join us</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Find Out More Section -->
+<section id="find-out-more" class="find-out-more-section section-spacing">
+  <div class="find-out-more-container">
+    <h2>Find Out More</h2>
+    <p>
+      Want to connect with us? Reach out through Twitter, join the community on Telegram, or check out the chart on pump.fun to see $Obby in action. Explore the links below and be part of the Memelution! 
+    </p>
+    <div class="logo-grid">
+      <a href="https://x.com/obbytoken" target="_blank" rel="noopener noreferrer">
+        <img src="static/x.jpg" alt="Icon 1" class="logo-circle">
+      </a>
+      <a href="https://t.me/Obby_on_Solana" target="_blank" rel="noopener noreferrer">
+        <img src="static/telegram.png" alt="Icon 2" class="logo-circle">
+      </a>
+      <a href="https://pump.fun/coin/FwhB26whpnd7cbgBqmFT61pEr2w5VdtmEhLRTBhopump" target="_blank" rel="noopener noreferrer">
+        <img src="static/pump.png" alt="Icon 4" class="logo-circle">
+      </a>
     </div>
   </div>
-  <script src="script.js"></script>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <img src="static/zen.gif" alt="Zen Logo" class="footer-logo">
+    <p>© 2024 <a href="https://obby.vip" target="_blank" rel="noopener noreferrer">Obby.vip</a></p>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script>
+    // Function to randomly change the images
+    function changeImage(imageId, images) {
+      const image = document.getElementById(imageId);
+      const randomIndex = Math.floor(Math.random() * images.length);
+      image.src = images[randomIndex];
+    }
+
+    // Change the images every 5 seconds
+    setInterval(() => changeImage('changing-image', ['static/bussines2.png', 'static/bussines3.png']), 5000);
+    setInterval(() => changeImage('community-changing-image', ['static/yeah2.png', 'static/yeah3.png']), 5000);
+  </script>
+
+<script>
+  // Function to copy the address to the clipboard
+  function copyAddress() {
+    const address = "FwhB26whpnd7cbgBqmFT61pEr2w5VdtmEhLRTBhopump";
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(address)
+        .then(() => {
+          alert("Contract address copied to clipboard!");
+        })
+        .catch(err => {
+          console.error("Failed to copy: ", err);
+          alert("Unable to copy address. Please try manually.");
+        });
+    } else {
+      const tempInput = document.createElement("textarea");
+      tempInput.value = address;
+
+      // Estilos que aseguran que no afecta el diseño ni activa zoom
+      tempInput.style.position = "fixed";
+      tempInput.style.top = "-1000px"; /* Mover fuera de la pantalla */
+      tempInput.style.left = "-1000px";
+      tempInput.style.opacity = "0"; /* Hacerlo invisible */
+      tempInput.style.fontSize = "16px"; /* Evitar zoom en dispositivos móviles */
+
+      document.body.appendChild(tempInput);
+      tempInput.focus();
+      tempInput.select();
+
+      try {
+        document.execCommand("copy");
+        alert("Contract address copied to clipboard!");
+      } catch (err) {
+        console.error("Fallback copy failed: ", err);
+        alert("Unable to copy address. Please try manually.");
+      }
+
+      document.body.removeChild(tempInput);
+    }
+  }
+</script>
+
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector('.navbar-center');
+    menu.classList.toggle('visible');
+    menu.classList.toggle('hidden');
+  }
+
+  function closeMenu() {
+    const menu = document.querySelector('.navbar-center');
+    menu.classList.remove('visible');
+    menu.classList.add('hidden');
+  }
+
+</script>
 </body>
 </html>

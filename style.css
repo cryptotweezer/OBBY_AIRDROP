@@ -1,0 +1,795 @@
+/* Body General */
+body {
+  margin: 0;
+  font-family: 'Sour Gummy', sans-serif; /* Fuente personalizada */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Degradado de rosa a azul */
+  color: #fff; /* Color del texto */
+  text-align: center; /* Alinear texto al centro */
+  font-size: 16px; /* Tamaño base para rem */
+  padding: 0;
+  overflow-x: hidden; /* Ocultar desbordamiento horizontal */
+  width: 100%; /* Asegurar que el ancho no exceda el viewport */
+}
+
+/* Reglas Generales */
+* {
+  box-sizing: border-box; /* Padding y bordes no afectan el tamaño total */
+}
+
+/* Fuentes Personalizadas */
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('fonts/SourGummy-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic; /* Ajusta según sea necesario */
+}
+
+/* Suavizar desplazamiento */
+
+html, body {
+  overflow-x: hidden; /* Evita el scroll horizontal */
+  margin: 0; /* Elimina cualquier margen por defecto */
+  padding: 0; /* Elimina cualquier padding por defecto */
+  width: 100%; /* Asegura que el ancho esté limitado al viewport */
+  height: 100%; /* Asegura que la altura esté limitada al viewport */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000; /* Asegura que cualquier espacio adicional tenga el mismo color que el fondo */
+}
+
+/* Para prevenir el desbordamiento en elementos internos */
+* {
+  box-sizing: border-box; /* Garantiza que el padding y los bordes estén incluidos en el tamaño total */
+}
+
+#home {
+  scroll-margin-top: 5rem; /* Ajusta el margen superior para compensar la altura de la navbar */
+}
+
+#who-obby {
+  scroll-margin-top: 7rem; /* Ajusta el margen superior para compensar la altura de la navbar */
+}
+
+#memelution {
+  scroll-margin-top: 7rem; /* Ajusta el margen superior para compensar la altura de la navbar */
+}
+
+#find-out-more {
+  scroll-margin-top: 4rem; /* Ajusta el margen superior para compensar la altura de la navbar */
+}
+
+/* Navbar General */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1); /* Fondo transparente */
+  backdrop-filter: blur(10px); /* Efecto borroso */
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 0; /* Evitar espacios adicionales debajo de la navbar */
+}
+
+/* Navbar Izquierda (Logo e Íconos) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left .icon {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.3); /* Amplía el ícono al pasar el cursor */
+}
+
+.logo-navbar {
+  height: 2rem; /* Tamaño del logo */
+  margin-left: 0rem; /* Espaciado entre ícono y logo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-navbar:hover {
+  transform: scale(1.3); /* Agranda el logo al pasar el cursor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0); /* Añade sombra */
+}
+
+/* Navbar Centro (Links del Menú) */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Espaciado uniforme entre opciones */
+}
+
+.navbar-center a {
+  text-decoration: none; /* Sin subrayado */
+  color: #fff;
+  font-size: 1rem; /* Tamaño base */
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.navbar-center a:hover {
+  transform: scale(1.1); /* Agranda el texto */
+  color: #fff;
+}
+
+.navbar-center a:not(:hover) {
+  transform: scale(0.9); /* Reduce texto no enfocado */
+}
+
+/* Navbar Derecha (Botón de Compra) */
+.navbar-right .buy-btn {
+  position: relative;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  border: 2px solid #000; /* Borde negro */
+  border-radius: 50px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, color 0.2s, opacity 0.2s;
+  font-family: 'Sour Gummy', sans-serif;
+}
+
+.navbar-right .buy-btn::after {
+  content: attr(data-hover); /* Texto dinámico en hover */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: none;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.2s;
+}
+
+.navbar-right .buy-btn:hover::after {
+  opacity: 1; /* Muestra texto dinámico */
+}
+
+.navbar-right .buy-btn:hover {
+  color: transparent; /* Oculta texto original */
+  transform: translateY(-2px); /* Eleva el botón */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-right .buy-btn:active {
+  transform: translateY(2px); /* Simula presión */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Íconos Sociales en el Menú */
+.navbar-center .social-icon {
+  width: 30px; /* Tamaño uniforme */
+  height: 30px;
+  border-radius: 50%; /* Forma circular */
+  object-fit: cover; /* Ajustar imagen */
+  margin-left: -1rem; /* Espaciado a la izquierda */
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.navbar-center .social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger-menu {
+  display: none; /* Ocultar por defecto */
+}
+
+/* Media Queries (Móvil) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .hamburger-menu {
+    display: block; /* Mostrar menú hamburguesa */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  .navbar-center {
+    display: none; /* Ocultar inicialmente */
+    flex-direction: column; /* Apilar opciones */
+    gap: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    padding: 1rem;
+    z-index: 10;
+  }
+
+  .navbar-center.visible {
+    display: flex; /* Mostrar opciones desplegables */
+  }
+
+  .navbar-center a {
+    font-size: 1rem; /* Tamaño ajustado para móviles */
+  }
+
+  .navbar-right {
+    display: none; /* Ocultar botón en móvil */
+  }
+}
+
+
+
+
+
+/* Sección Principal */
+#home {
+  padding-top: calc(2rem + 1rem); /* Ajusta según la altura de la navbar */
+  padding-bottom: 2rem; /* Espaciado inferior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  color: #fff;
+  scroll-margin-top: 5rem; /* Asegura que el scroll no quede solapado con la navbar */
+}
+
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 100%; /* Asegura que el logo no exceda el contenedor */
+}
+
+.logo-section {
+  width: 100%;
+  max-width: 40rem; /* agranda el logo */
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Skater */
+.skater-container {
+  position: relative;
+  z-index: 2;
+  margin-top: -8rem; /* subir y bajar */
+  text-align: center;
+}
+
+.skater {
+  width: 100%;
+  max-width: 35rem; /* Incrementar tamaño máximo del skater */
+  height: auto;
+}
+
+/* Address Box */
+.contract-address {
+  text-align: center;
+  z-index: 3;
+  margin-top: -3rem; /* Separación del skater */
+  margin-bottom: 1rem; /* Separación inferior */
+}
+
+.contract-address p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.address-box {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); /* Fondo transparente */
+  color: #ffffff;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0rem;
+  font-weight: bold;
+}
+
+.address-box .address {
+  margin-right: 0.625rem;
+  font-family: monospace;
+}
+
+/* Botón Copy (Contract Address) */
+.copy-btn {
+  position: relative; /* Necesario para texto dinámico con ::after */
+  padding: 0.7rem 2rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: bold;
+  color: #fff; /* Color del texto */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  border: 2px solid #000; /* Borde negro */
+  border-radius: 50px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer; /* Cursor en forma de mano */
+  transition: transform 0.2s, box-shadow 0.2s, color 0.2s, opacity 0.2s; /* Transiciones suaves */
+  font-family: 'Sour Gummy', sans-serif; /* Fuente personalizada */
+}
+
+/* Hover y Texto Dinámico */
+.copy-btn::after {
+  content: attr(data-hover); /* Texto dinámico */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Color del texto dinámico */
+  background: none;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.2s;
+}
+
+.copy-btn:hover::after {
+  opacity: 1; /* Mostrar texto dinámico al pasar el cursor */
+}
+
+.copy-btn:hover {
+  color: transparent; /* Ocultar texto original */
+  transform: translateY(-2px); /* Elevar el botón */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+.copy-btn:active {
+  transform: translateY(2px); /* Simular presión */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reducir la sombra */
+}
+
+
+
+
+/* Media Queries (Mobile) */
+@media (max-width: 768px) {
+  #home {
+    padding-top: 3rem; /* Ajustar espaciado superior */
+  }
+
+  .logo-section {
+    max-width: 100rem; /* Tamaño del logo ajustado para móviles */
+  }
+
+  .skater-container {
+    margin-top: -6rem; /* Ajustar margen superior */
+  }
+
+  .skater {
+    max-width: 40rem; /* Ajustar tamaño del skater */
+  }
+
+  .contract-address {
+    margin-top: -3rem; /* Ajustar margen superior */
+    margin-bottom: 0.5rem; /* Ajustar margen inferior */
+  }
+
+  .contract-address p {
+    font-size: 1rem; /* Reducir texto en móvil */
+  }
+
+  .address-box {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .address-box .address {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  .copy-btn {
+    display: block;
+    font-size: 0.9rem; /* Reducir texto del botón */
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto;
+  }
+}
+
+
+/* Sección Who's Obby */
+#who-obby {
+  padding: 3rem 1rem; /* Espaciado superior, inferior y lateral */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  color: #fff; /* Texto blanco */
+  text-align: center;
+}
+
+/* Contenedor Principal */
+.who-container {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre el texto y la imagen */
+  align-items: center;
+  flex-wrap: nowrap; /* No apilar los elementos */
+  max-width: 1200px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrar la sección */
+  gap: 2rem; /* Espaciado entre columnas */
+}
+
+/* Contenido de Texto */
+.who-content {
+  flex: 1; /* Ajustar ancho relativo */
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.who-content .who-header {
+  max-width: 100%; /* Ajustar al ancho del contenedor */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.who-content p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  line-height: 1.5; /* Altura de línea */
+  margin-bottom: 1rem; /* Espaciado entre párrafos */
+}
+
+/* Botón en el Contenido */
+.who-obby-btn {
+  position: relative; /* Necesario para texto dinámico con ::after */
+  padding: 0.7rem 2rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: bold;
+  color: #fff; /* Color del texto */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  border: 2px solid #000; /* Borde negro */
+  border-radius: 50px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer; /* Cursor en forma de mano */
+  transition: transform 0.2s, box-shadow 0.2s, color 0.2s, opacity 0.2s; /* Transiciones suaves */
+}
+
+.who-obby-btn::after {
+  content: attr(data-hover); /* Texto dinámico */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Color del texto dinámico */
+  background: none;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.2s;
+}
+
+.who-obby-btn:hover::after {
+  opacity: 1; /* Mostrar texto dinámico al pasar el cursor */
+}
+
+.who-obby-btn:hover {
+  color: transparent; /* Ocultar texto original */
+  transform: translateY(-2px); /* Elevar el botón */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+.who-obby-btn:active {
+  transform: translateY(2px); /* Simular presión */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reducir la sombra */
+}
+
+/* Imagen */
+.who-image {
+  flex: 1; /* Ajustar ancho relativo */
+  display: flex;
+  justify-content: center; /* Centrar la imagen */
+}
+
+.who-image .who-right {
+  width: 100%; /* Imagen ocupa todo el ancho disponible */
+  max-width: 500px; /* Tamaño máximo */
+  height: auto; /* Mantener proporción */
+}
+
+/* Media Queries para Móvil */
+
+
+@media (max-width: 768px) {
+  #who-obby {
+    padding: 2rem 1rem; /* Espaciado general */
+    text-align: center; /* Centrar contenido */
+  }
+
+  .who-container {
+    display: flex;
+    flex-direction: column; /* Apilar elementos */
+    align-items: center; /* Centrar elementos horizontalmente */
+    gap: 1.5rem; /* Espaciado entre elementos */
+  }
+
+  .who-image {
+    order: 1; /* Asegurar que la imagen vaya primero */
+    width: 100%; /* Ajustar al ancho disponible */
+    margin: 0 auto; /* Centrarse en el contenedor */
+  }
+
+  .who-image .who-right {
+    max-width: 300px; /* Reducir el tamaño de la imagen */
+    height: auto; /* Mantener proporción */
+    margin: 0 auto; /* Centrar la imagen */
+  }
+
+  .who-content {
+    order: 3; /* Colocar el texto después de las imágenes */
+    max-width: 90%; /* Márgenes laterales */
+    text-align: center; /* Centrar texto */
+  }
+
+  .who-content .who-header {
+    max-width: 100%;
+    margin-bottom: 1rem; /* Espaciado inferior */
+  }
+
+  .who-content p {
+    font-size: 1rem; /* Tamaño ajustado para móvil */
+    line-height: 1.5; /* Altura de línea */
+    margin-bottom: 1rem; /* Espaciado entre párrafos */
+  }
+
+  .who-obby-btn {
+    order: 4; /* Botón al final */
+    margin-top: 1rem; /* Separación del texto */
+    width: auto;
+  }
+}
+
+/* Sección Community - Estilo General (Pantallas Grandes) */
+#memelution {
+  padding: 3rem 1rem; /* Espaciado superior, inferior y lateral */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  color: #fff; /* Texto blanco */
+  text-align: center;
+}
+
+.community-container {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre el texto y la imagen */
+  align-items: center;
+  flex-wrap: nowrap; /* No apilar elementos */
+  max-width: 1200px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrar la sección */
+  gap: 2rem; /* Espaciado entre columnas */
+}
+
+/* Contenido de Texto */
+.community-content {
+  flex: 1; /* Ajustar ancho relativo */
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.community-content .community-header {
+  max-width: 100%; /* Ajustar al ancho del contenedor */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.community-content p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  line-height: 1.5; /* Altura de línea */
+  margin-bottom: 1rem; /* Espaciado entre párrafos */
+}
+
+.community-content .moon-text {
+  font-size: 1.5rem; /* Tamaño destacado para texto final */
+  font-weight: bold;
+  margin-top: 1rem; /* Espaciado superior */
+}
+
+.memelution-btn {
+  position: relative; /* Necesario para texto dinámico con ::after */
+  padding: 0.7rem 2rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: bold;
+  color: #fff; /* Color del texto */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  border: 2px solid #000; /* Borde negro */
+  border-radius: 50px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer; /* Cursor en forma de mano */
+  transition: transform 0.2s, box-shadow 0.2s, color 0.2s, opacity 0.2s; /* Transiciones suaves */
+}
+
+/* Imagen */
+.community-image {
+  flex: 1; /* Ajustar ancho relativo */
+  display: flex;
+  justify-content: center; /* Centrar la imagen */
+}
+
+.community-image .community-left {
+  width: 100%; /* Imagen ocupa todo el ancho disponible */
+  max-width: 500px; /* Tamaño máximo */
+  height: auto; /* Mantener proporción */
+}
+
+/* Media Queries para Móvil */
+@media (max-width: 768px) {
+  #memelution {
+    padding: 2rem 1rem; /* Reducir espaciado */
+    text-align: center; /* Centrar contenido */
+  }
+
+  .community-container {
+    display: flex;
+    flex-direction: column; /* Apilar elementos */
+    align-items: center; /* Centrar elementos horizontalmente */
+    gap: 1.5rem; /* Espaciado entre elementos */
+  }
+
+  .community-image {
+    order: 1; /* Imagen del negocio primero */
+    width: 100%; /* Ajustar al ancho disponible */
+    margin: 0 auto; /* Centrarse en el contenedor */
+  }
+
+  .community-image .community-left {
+    max-width: 300px; /* Reducir el tamaño de la imagen */
+    height: auto; /* Mantener proporción */
+    margin: 0 auto; /* Centrar la imagen */
+  }
+
+  .community-content {
+    order: 3; /* Colocar el texto después de las imágenes */
+    max-width: 90%; /* Márgenes laterales */
+    text-align: center; /* Centrar texto */
+  }
+
+  .community-content .community-header {
+    max-width: 100%;
+    margin-bottom: 1rem; /* Espaciado inferior */
+  }
+
+  .community-content p {
+    font-size: 1rem; /* Tamaño ajustado para móvil */
+    line-height: 1.5; /* Altura de línea */
+    margin-bottom: 1rem; /* Espaciado entre párrafos */
+  }
+
+  .community-content .moon-text {
+    font-size: 1.2rem; /* Reducir tamaño destacado */
+    margin-top: 1rem; /* Espaciado superior */
+  }
+
+  .memelution-btn {
+    order: 4; /* Botón al final */
+    margin-top: 1rem; /* Separación del texto */
+    width: auto;
+  }
+}
+
+/* Sección Find Out More */
+#find-out-more {
+  text-align: center;
+  padding: 2rem 1rem; /* Espaciado general */
+  background: linear-gradient(90deg, #ff00ff, #4facfe); /* Fondo degradado */
+  color: #fff; /* Texto blanco */
+}
+
+.find-out-more-container {
+  max-width: 1200px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrar contenido */
+  padding: 0 2rem; /* Márgenes laterales */
+}
+
+.find-out-more-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem; /* Espaciado inferior */
+  font-family: 'Sour Gummy', sans-serif; /* Fuente personalizada */
+}
+
+.find-out-more-container p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  margin-bottom: 2rem; /* Espaciado inferior */
+  line-height: 1.6; /* Altura de línea */
+}
+
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Espaciado entre íconos */
+  flex-wrap: wrap; /* Permitir que los íconos se apilen si es necesario */
+}
+
+.logo-circle {
+  width: 5rem; /* Tamaño del ícono */
+  height: 5rem;
+  border-radius: 50%; /* Forma circular */
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.logo-circle:hover {
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el cursor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+/* Media Queries para Móvil */
+@media (max-width: 768px) {
+  #find-out-more {
+    padding: 2rem 1rem; /* Reducir espaciado */
+  }
+
+  .find-out-more-container {
+    padding: 0 1rem; /* Márgenes laterales ajustados para móvil */
+  }
+
+  .find-out-more-container h2 {
+    font-size: 1.5rem; /* Reducir tamaño del encabezado */
+  }
+
+  .find-out-more-container p {
+    font-size: 1rem; /* Reducir tamaño del texto */
+    line-height: 1.5; /* Ajustar altura de línea */
+  }
+
+  .logo-grid {
+    gap: 1.5rem; /* Reducir espacio entre íconos */
+  }
+
+  .logo-circle {
+    width: 2rem; /* Reducir tamaño de los íconos */
+    height: 2rem;
+  }
+}
+
+
+/* Imagen Zen en el Footer */
+.footer-logo {
+  width: 30rem; /* Reducir el tamaño de la imagen */
+  height: auto; /* Mantener proporción */
+  display: block; /* Asegurar que se comporte como bloque */
+  margin: 1rem auto; /* Centrar horizontalmente con margen superior/inferior */
+}
+
+footer p a {
+  color: #fff; /* Cambiar el color del enlace a blanco */
+  text-decoration: none; /* Opcional: Elimina el subrayado */
+}
+
+footer p a:hover {
+  color: #000000; /* Opcional: Cambiar el color al pasar el cursor */
+}
+
+/* Media Queries para Móvil */
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 20rem; /* Tamaño más pequeño en móviles */
+    margin: 0.5rem auto; /* Reducir el margen */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo {
+    width: 15rem;
+  }
+}
